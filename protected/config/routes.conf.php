@@ -35,4 +35,8 @@ $route['*']['/ionadmin/encuesta/preguntas/:idpregunta/respuesta/agregar'] = arra
 $route['*']['/ionadmin/encuesta/preguntas/:idpregunta/respuesta/eliminar/:idrespuesta'] = array('PyRController', 'eliminarRespuesta');
 
 
+//Página
+$route['*']['/website'] = array('MainController', 'website');
+$route['*']['/programa'] = array('MainController', 'programa');
+
 ?>
