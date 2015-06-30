@@ -9,8 +9,9 @@
 class MainController extends DooController {
 
     public function index() {
-        $this->data['slug'] = 'home';
-        $this->renderc('home',$this->data);
+        /*$this->data['slug'] = 'home';
+        $this->renderc('home',$this->data);*/
+        header('location:'.Doo::conf()->APP_URL.'/programa');
     }
     
     public function website() {
@@ -21,6 +22,11 @@ class MainController extends DooController {
     public function programa() {
         $this->data['slug'] = 'programa';
         $this->renderc('eventos',$this->data);
+    }
+    
+    public function issue() {
+        $this->data['slug'] = 'issue';
+        $this->renderc('issue',$this->data);
     }
 
 }

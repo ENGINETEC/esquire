@@ -38,5 +38,6 @@ $route['*']['/ionadmin/encuesta/preguntas/:idpregunta/respuesta/eliminar/:idresp
 //Página
 $route['*']['/website'] = array('MainController', 'website');
 $route['*']['/programa'] = array('MainController', 'programa');
+$route['*']['/issue'] = array('MainController', 'issue');
 
 ?>

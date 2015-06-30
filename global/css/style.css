@@ -36,7 +36,7 @@ li.logo {
     background-color: transparent;
 }
 .side-nav.fixed {
-    background-color: #333333;
+    background-color: #000;
     color: #FFF;
     text-transform: uppercase;
     overflow: hidden;
@@ -46,7 +46,7 @@ li.logo {
     padding: 0 50px;
 }
 .side-nav li.bold:hover a, .side-nav.fixed .bold.active a {
-    color: #444;
+    color: #FFF;
 }
 .side-nav li {
     float: none;
