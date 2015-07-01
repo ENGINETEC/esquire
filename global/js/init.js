@@ -23,3 +23,9 @@ $('#nav-mobile a').click(function(){
 $('button#login').click(function(){
     $('#preloader-container').show();
 });
+
+
+$("a").click(function (event) {
+    event.preventDefault();
+    window.location = $(this).attr("href");
+});

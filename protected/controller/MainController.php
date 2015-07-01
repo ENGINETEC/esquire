@@ -11,7 +11,7 @@ class MainController extends DooController {
     public function index() {
         /*$this->data['slug'] = 'home';
         $this->renderc('home',$this->data);*/
-        header('location:'.Doo::conf()->APP_URL.'/programa');
+        header('location:'.Doo::conf()->APP_URL.'programa');
     }
     
     public function website() {

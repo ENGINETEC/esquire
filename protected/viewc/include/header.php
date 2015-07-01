@@ -19,11 +19,11 @@
                 <img src="<?php echo Doo::conf()->APP_URL; ?>global/img/logo.png" alt="logo">
             </a>
         </li>
-        <li class="bold <?php if (isset($data['slug']) && $data['slug'] == 'programa') echo 'active'; ?>"><a href="<?php echo Doo::conf()->APP_URL; ?>programa" class="waves-effect waves-esquire">Programa</a></li>
+        <li class="bold <?php if (isset($data['slug']) && $data['slug'] == 'programa') echo 'active'; ?>"><a href="<?php echo Doo::conf()->SUBFOLDER; ?>programa" class="waves-effect waves-esquire">Programa</a></li>
         <li class="bold <?php if (isset($data['slug']) && $data['slug'] == 'encuestas') echo 'active'; ?>"><a href="#" class="waves-effect waves-esquire">Encuestas</a></li>
         <li class="bold <?php if (isset($data['slug']) && $data['slug'] == 'resultados') echo 'active'; ?>"><a href="#" class="waves-effect waves-esquire">Resultados</a></li>
-        <li class="bold <?php if (isset($data['slug']) && $data['slug'] == 'website') echo 'active'; ?>"><a href="<?php echo Doo::conf()->APP_URL; ?>website" class="waves-effect waves-esquire">Website</a></li>
+        <li class="bold <?php if (isset($data['slug']) && $data['slug'] == 'website') echo 'active'; ?>"><a href="<?php echo Doo::conf()->SUBFOLDER; ?>website" class="waves-effect waves-esquire">Website</a></li>
         <!-- <li class="bold <?php if (isset($data['slug']) && $data['slug'] == 'minisite') echo 'active'; ?>"><a href="#" class="waves-effect waves-esquire">Minisite</a></li> -->
-        <li class="bold <?php if (isset($data['slug']) && $data['slug'] == 'issue') echo 'active'; ?>"><a href="<?php echo Doo::conf()->APP_URL; ?>issue" class="waves-effect waves-esquire">Issue</a></li>
+        <li class="bold <?php if (isset($data['slug']) && $data['slug'] == 'issue') echo 'active'; ?>"><a href="<?php echo Doo::conf()->SUBFOLDER; ?>issue" class="waves-effect waves-esquire">Issue</a></li>
     </ul>
 </header>
