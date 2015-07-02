@@ -14,19 +14,6 @@ html * {
   box-sizing: border-box;
 }
 
-body {
-  font-size: 100%;
-  font-family: "Droid Serif", serif;
-  color: #7f8c97;
-  background-color: #e9f0f5;
-}
-
-a {
-  color: #acb7c0;
-  text-decoration: none;
-  font-family: "Open Sans", sans-serif;
-}
-
 img {
   max-width: 100%;
 }
@@ -39,7 +26,7 @@ Modules - reusable parts of our design
 .cd-container {
   /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
   width: 90%;
-  max-width: 1170px;
+  max-width: 969px;
   margin: 0 auto;
 }
 .cd-container::after {
@@ -71,7 +58,7 @@ Main components
   width: 4px;
   background: #d7e4ed;
 }
-@media only screen and (min-width: 1170px) {
+@media only screen and (min-width: 969px) {
   #cd-timeline {
     margin-top: 3em;
     margin-bottom: 3em;
@@ -97,7 +84,7 @@ Main components
 .cd-timeline-block:last-child {
   margin-bottom: 0;
 }
-@media only screen and (min-width: 1170px) {
+@media only screen and (min-width: 969px) {
   .cd-timeline-block {
     margin: 4em 0;
   }
@@ -137,7 +124,7 @@ Main components
 .cd-timeline-img.cd-location {
   background: #f0ca45;
 }
-@media only screen and (min-width: 1170px) {
+@media only screen and (min-width: 969px) {
   .cd-timeline-img {
     width: 60px;
     height: 60px;
@@ -218,10 +205,8 @@ Main components
 .cd-timeline-content {
   position: relative;
   margin-left: 60px;
-  background: white;
-  border-radius: 0.25em;
   padding: 1em;
-  box-shadow: 0 3px 0 #d7e4ed;
+  color: #FFF;
 }
 .cd-timeline-content:after {
   content: "";
@@ -229,7 +214,8 @@ Main components
   clear: both;
 }
 .cd-timeline-content h2 {
-  color: #303e49;
+  color: #fff;
+  margin-top: 0px;
 }
 .cd-timeline-content p, .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
   font-size: 13px;
@@ -245,12 +231,12 @@ Main components
 .cd-timeline-content .cd-read-more {
   float: right;
   padding: .8em 1em;
-  background: #acb7c0;
-  color: white;
+  background: #333;
+  color: #FFF;
   border-radius: 0.25em;
 }
 .no-touch .cd-timeline-content .cd-read-more:hover {
-  background-color: #bac4cb;
+  background-color: #555;
 }
 .cd-timeline-content .cd-date {
   float: left;
@@ -281,7 +267,7 @@ Main components
     font-size: 0.875rem;
   }
 }
-@media only screen and (min-width: 1170px) {
+@media only screen and (min-width: 969px) {
   .cd-timeline-content {
     margin-left: 0;
     padding: 1.6em;
@@ -333,7 +319,7 @@ Main components
   }
 }
 
-@media only screen and (min-width: 1170px) {
+@media only screen and (min-width: 969px) {
   /* inverse bounce effect on even content blocks */
   .cssanimations .cd-timeline-block:nth-child(even) .cd-timeline-content.bounce-in {
     -webkit-animation: cd-bounce-2-inverse 0.6s;

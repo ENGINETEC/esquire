@@ -3,6 +3,31 @@
     Author     : miguelperez
 */
 
+/* Fonts ================================================================= */
+@font-face {
+    font-family: 'Conv_Grotesque MT Std Condensed';
+    src: url('../font/grotesque/Grotesque MT Std Condensed.eot');
+    src: url('../font/grotesque/Grotesque MT Std Condensed.woff') format('woff'),
+        url('../font/grotesque/Grotesque MT Std Condensed.ttf') format('truetype'),
+        url('../font/grotesque/Grotesque MT Std Condensed.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+	font-family: 'HelveticaNeue-CondensedBold';
+	src: url('..font/helvetica-neue/HelveticaNeue-CondensedBold.eot');
+	src: url('../font/helvetica-neue/HelveticaNeue-CondensedBold.woff') format('woff'),
+            url('../font/helvetica-neue/HelveticaNeue-CondensedBold.ttf') format('truetype'), 
+            url('../font/helvetica-neue/HelveticaNeue-CondensedBold.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+/* General ============================================================= */
+body{
+    background: #000;
+}
+
 /* Preloader ============================================================= */
 #preloader-container {
     background-color: rgba(100,100,100,0.8);
@@ -36,17 +61,17 @@ li.logo {
     background-color: transparent;
 }
 .side-nav.fixed {
-    background-color: #000;
-    color: #FFF;
+    background-color: #202020;
+    color: #adadad;
     text-transform: uppercase;
     overflow: hidden;
 }
 .side-nav.fixed .bold a {
-    color: #FFF;
+    color: #adadad;
     padding: 0 50px;
 }
 .side-nav li.bold:hover a, .side-nav.fixed .bold.active a {
-    color: #FFF;
+    color: #adadad;
 }
 .side-nav li {
     float: none;
@@ -55,6 +80,16 @@ li.logo {
 i.mdi-navigation-menu {
     color: #000;
     font-size: 24px;
+}
+ul.side-nav li a.waves-effect {
+  font-family: 'Conv_Grotesque MT Std Condensed', sans-serif;
+  font-size: 24px;
+  font-weight: 100;
+  letter-spacing: 1px;
+}
+
+.side-nav li.bold:hover a, .side-nav.fixed .bold.active a {
+  color: #000;
 }
 
 
@@ -108,22 +143,22 @@ main, footer {
     background: #000000;
 }
 .cd-timeline-img {
-  position: absolute;
-  top: 14px;
-  left: 50%;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  box-shadow: 0 0 0 2px white, inset 0 1px 0 rgba(0, 0, 0, 0.08), 0 1px 0 1px rgba(0, 0, 0, 0.05);
-  margin-left: -10px;
+    position: absolute;
+    top: 14px;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px white, inset 0 1px 0 rgba(0, 0, 0, 0.08), 0 1px 0 1px rgba(0, 0, 0, 0.05);
+    margin-left: -10px;
 }
 #titulo-programa {
-  text-align: center;
-  margin-bottom: -50px;
+    text-align: center;
+    margin-bottom: -50px;
 }
 #titulo-programa h2 {
-  color: #FFF;
-  background-color: #000;
+  color: #000;
+  background-color: #FFF;
   display: inline-block;
   width: 70%;
   text-align: center;
@@ -140,7 +175,7 @@ main, footer {
     }
 }
 
-@media screen and (max-width:1169px){
+@media screen and (max-width:969px){
     .cd-timeline-img {
         position: absolute;
         top: 14px;
