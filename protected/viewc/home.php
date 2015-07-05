@@ -2,7 +2,7 @@
 <html lang="es-MX">
     <head>
         <?php include 'include/head.php'; ?>
-        <title>Home - Esquire</title>
+        <title>Home - <?php echo Doo::conf()->APP_NAME; ?></title>
     </head>
     <body>
         <?php include 'include/header.php'; ?>

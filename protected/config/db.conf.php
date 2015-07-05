@@ -18,7 +18,7 @@ $dbmap['CtPreguntas']['belongs_to']['CtEncuesta'] = array('foreign_key'=>'id_enc
 $dbmap['CtPreguntas']['has_many']['CtRespuesta'] = array('foreign_key'=>'id_pregunta');
 
 //CtRespuestas
-$dbmap['CtRespuestas']['belongs_to']['CtPreguntas'] = array('foreign_key'=>'id_pregunta');
+$dbmap['CtRespuesta']['belongs_to']['CtPreguntas'] = array('foreign_key'=>'id_pregunta');
 
 
 

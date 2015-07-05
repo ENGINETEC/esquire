@@ -18,14 +18,10 @@ class CtRespuestaBase extends DooModel{
      */
     public $respuesta;
 
-    /**
-     * @var int Max length is 11.
-     */
-    public $valor;
 
     public $_table = 'ct_respuesta';
     public $_primarykey = 'id_respuesta';
-    public $_fields = array('id_respuesta','id_pregunta','respuesta','valor');
+    public $_fields = array('id_respuesta','id_pregunta','respuesta');
 
     public function getVRules() {
         return array(
@@ -45,12 +41,6 @@ class CtRespuestaBase extends DooModel{
 
                 'respuesta' => array(
                         array( 'maxlength', 100 ),
-                        array( 'notnull' ),
-                ),
-
-                'valor' => array(
-                        array( 'integer' ),
-                        array( 'maxlength', 11 ),
                         array( 'notnull' ),
                 )
             );

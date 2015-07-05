@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="description" content="">
-        <title>Issue - Esquire</title>
+        <title>Issue - <?php echo Doo::conf()->APP_NAME; ?></title>
         <!-- Favicons-->
         <!-- <link rel="apple-touch-icon-precomposed" href="">
         <meta name="msapplication-TileColor" content="#FFFFFF">

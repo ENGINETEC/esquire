@@ -36,13 +36,7 @@ class AdminController extends Session {
     }
 
     function index() {
-        session_start();
-        if(Session::siExisteSesion()){
-            $this->data['slug']  = 'home';
-            $this->renderc('admin/home',$this->data);
-        }else{
-            header('location:'.Doo::conf()->APP_URL.'ionadmin/login?error=1');
-        }
+        header('location:'.Doo::conf()->APP_URL.'ionadmin/eventos');
         
     }
 

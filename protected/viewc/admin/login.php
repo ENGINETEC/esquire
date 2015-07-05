@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="es-MX">
     <head>
-        <?php include 'inlcude/head.php'; ?>
+        <?php include 'include/head.php'; ?>
         <title>Login - Esquire</title>
     </head>
-    <body>
+    <body class="admin">
         <?php include 'include/header.php'; ?>
     <main>
         <div class="section" id="contenido-principal">

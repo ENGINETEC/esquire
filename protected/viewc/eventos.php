@@ -6,7 +6,7 @@
         <?php include 'include/head.php'; ?>
         <script src="<?php echo Doo::conf()->APP_URL; ?>global/js/vertical-timeline/js/modernizr.js"></script> <!-- Modernizr -->
         
-        <title>Programa - Esquire</title>
+        <title>Programa - <?php echo Doo::conf()->APP_NAME; ?></title>
     </head>
     <body>
         <?php include 'include/header.php'; ?>

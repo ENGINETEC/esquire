@@ -28,6 +28,13 @@ body{
     background: #000;
 }
 
+body.admin{
+    background: #FFF;
+}
+
+.center{
+    text-align: center;
+}
 /* Preloader ============================================================= */
 #preloader-container {
     background-color: rgba(100,100,100,0.8);
@@ -166,6 +173,28 @@ main, footer {
   font-size: 35px;
   padding: 10px 10px;
   margin: 30px 10px;
+}
+
+/* Admin ================================================================ */
+.pregunta-container {
+  padding: 15px 0;
+  text-align: left;
+}
+p.pregunta {
+  font-size: 19px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.admin #contenido-principal ul li {
+  list-style-type: lower-latin;
+  margin-left: 20px;
+}
+a.btn.red.btn-respuesta {
+  line-height: 22px;
+  padding: 0px 5px;
+  height: 22px;
+  font-size: 12px;
 }
 
 /* Responsivo =========================================================== */

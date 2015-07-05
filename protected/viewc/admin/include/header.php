@@ -19,6 +19,8 @@
                 <img src="<?php echo Doo::conf()->APP_URL; ?>global/img/logo.png" alt="logo">
             </a>
         </li>
-        <li class="bold <?php if(isset($data['slug']) && $data['slug']=='home') echo 'active'; ?>"><a href="<?php echo Doo::conf()->APP_URL; ?>" class="waves-effect waves-esquire">Home</a></li>
+        <li class="bold <?php if(isset($data['slug']) && $data['slug']=='home') echo 'active'; ?>"><a href="<?php echo Doo::conf()->APP_URL; ?>ionadmin/index" class="waves-effect waves-esquire">Home</a></li>
+        <li class="bold"><a href="<?php echo Doo::conf()->APP_URL; ?>ionadmin/eventos" class="waves-effect waves-esquire">Ver eventos</a></li>
+        <li class="bold"><a href="<?php echo Doo::conf()->APP_URL; ?>" class="waves-effect waves-esquire">Salir</a></li>
     </ul>
 </header>
