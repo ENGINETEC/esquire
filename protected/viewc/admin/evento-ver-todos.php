@@ -46,6 +46,9 @@
                         <div class="row">
                             <div class="container">
                                 <a href="<?php echo Doo::conf()->APP_URL.'ionadmin/eventos/agregar'; ?>" class="waves-effect waves-esquire btn black">Agregar evento al programa</a>
+                                <?php if($data['encuestas_activas']>0): ?>
+                                <a href="<?php echo Doo::conf()->APP_URL.'ionadmin/encuestas/desactivar/todas'; ?>" class="waves-effect waves-esquire btn black">Desactivar todas las encuestas</a>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>

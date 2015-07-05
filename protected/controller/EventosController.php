@@ -10,6 +10,11 @@ class EventosController extends Session {
             Doo::loadModel('CtEventos');
             $this->data['eventos'] = Doo::db()->find('CtEventos');   
             $this->data['slug'] = 'eventos';
+            
+            Doo::loadModel('CtEncuesta');
+            $enActivas = new CtEncuesta();
+            $enActivas->activa = 1;
+            $this->data['encuestas_activas'] = $enActivas->count();            
             $this->renderc('admin/evento-ver-todos', $this->data);
         } else {
             header('location:' . Doo::conf()->APP_URL . 'ionadmin/login?error=1');
@@ -48,12 +53,30 @@ class EventosController extends Session {
     }
 
     function eliminar() {
-        echo 'You are visiting ' . $_SERVER['REQUEST_URI'];
+        session_start();
+        if (Session::siExisteSesion()) {
+            
+            $referer = (isset($_SERVER['HTTP_REFERER'])) ? $_SERVER['HTTP_REFERER'] : Doo::conf()->APP_URL . 'ionadmin/index';
+            $referer = strtok($referer, '?');
+            
+            $idEvento = intval($this->params['idevento']);
+            
+            Doo::loadModel('CtEventos');
+            $evento = new CtEventos();
+            $evento->id_evento = $idEvento;
+            $evento = $evento->getOne();
+            if(!empty($evento)){
+                $evento->borrarEncuestas();
+                $evento->delete();
+                header('location:' . $referer . '?success=1');
+            }else{
+                header('location:' . $referer . '?error=1');
+            }
+        } else {
+            header('location:' . Doo::conf()->APP_URL . 'ionadmin/login?error=1');
+        }
     }
 
-    function habilitar() {
-        echo 'You are visiting ' . $_SERVER['REQUEST_URI'];
-    }
 
     function ver() {
         echo 'You are visiting ' . $_SERVER['REQUEST_URI'];

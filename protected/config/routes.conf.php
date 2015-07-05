@@ -21,8 +21,9 @@ $route['*']['/ionadmin/evento/:idevento/encuestas'] = array('EncuestasController
 $route['*']['/ionadmin/evento/:idevento/encuestas/agregar'] = array('EncuestasController', 'agregar');
 $route['*']['/ionadmin/evento/:idevento/encuestas/eliminar/:idencuesta'] = array('EncuestasController', 'eliminar');
 $route['*']['/ionadmin/evento/:idevento/encuestas/habilitar/:idencuesta'] = array('EncuestasController', 'habilitar');
-$route['*']['/ionadmin/evento/:idevento/encuestas/editar/:idencuesta'] = array('EncuestasController', 'ver');
+$route['*']['/ionadmin/encuestas/desactivar/todas'] = array('EncuestasController', 'deshabilitarTodas');
 
+$route['*']['/ionadmin/evento/:idevento/encuestas/editar/:idencuesta'] = array('EncuestasController', 'ver');
 
 //Preguntas
 $route['*']['/ionadmin/encuesta/:idencuesta/preguntas/agregar'] = array('PyRController', 'agregarPregunta');

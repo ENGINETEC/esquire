@@ -13,7 +13,7 @@ class EncuestasController extends Session {
             $ev = new CtEventos();
             $ev->id_evento = intval($this->params['idevento']);
             $ev = $ev->getOne();
-            
+
             if (!empty($ev)) {
                 $this->data['nombre_evento'] = $ev->nombre;
                 $e = new CtEncuesta();
@@ -23,7 +23,7 @@ class EncuestasController extends Session {
 
                 $this->data['slug'] = 'encuestas';
                 $this->renderc('admin/encuesta-ver-todos', $this->data);
-            }else{
+            } else {
                 header('location:' . Doo::conf()->APP_URL . 'ionadmin/eventos?error=1');
             }
         } else {
@@ -62,11 +62,67 @@ class EncuestasController extends Session {
     }
 
     function eliminar() {
-        echo 'You are visiting ' . $_SERVER['REQUEST_URI'];
+        session_start();
+        if (Session::siExisteSesion()) {
+            $referer = (isset($_SERVER['HTTP_REFERER'])) ? $_SERVER['HTTP_REFERER'] : Doo::conf()->APP_URL . 'ionadmin/index';
+            $referer = strtok($referer, '?');
+            $idEvento = intval($this->params['idevento']);
+            $idEncuesta = intval($this->params['idencuesta']);
+            Doo::loadModel('CtEncuesta');
+            Doo::loadModel('CtPreguntas');
+            Doo::loadModel('CtRespuesta');
+            $encuesta = new CtEncuesta();
+            $encuesta->id_encuesta = $idEncuesta;
+            $encuesta = $encuesta->getOne();
+            if (!empty($encuesta)) {
+                $preg = new CtPreguntas();
+                $preg->id_encuesta = $encuesta->id_encuesta;
+                $preguntas = $preg->find();
+                if (!empty($preguntas)) {
+                    foreach ($preguntas as $p) {
+                        $resp = new CtRespuesta();
+                        $resp->id_pregunta = $p->id_pregunta;
+                        $resp->delete();
+                        $p->delete();
+                    }
+                }
+                $encuesta->delete();
+                header('location:' . $referer . '?success=1');
+            } else {
+                header('location:' . $referer . '?error=2');
+            }
+        } else {
+            header('location:' . $referer . '?error=1');
+        }
     }
 
     function habilitar() {
-        echo 'You are visiting ' . $_SERVER['REQUEST_URI'];
+        session_start();
+        if (Session::siExisteSesion()) {
+            $referer = (isset($_SERVER['HTTP_REFERER'])) ? $_SERVER['HTTP_REFERER'] : Doo::conf()->APP_URL . 'ionadmin/index';
+            $referer = strtok($referer, '?');
+            $idEncuesta = intval($this->params['idencuesta']);
+            Doo::loadModel('CtEncuesta');
+            $encuesta = new CtEncuesta();
+            $encuesta->id_encuesta = $idEncuesta;
+            $encuesta = $encuesta->getOne();
+            if (!empty($encuesta)) {
+                if ($encuesta->activa == 0) {
+                    $encuesta->activa = 1;
+                    //Deshabilitamos todas las demás encuestas que pudieran estar activas
+                    $query = "UPDATE ct_encuesta e SET e.activa = 0";
+                    Doo::db()->query($query);
+                } else {
+                    $encuesta->activa = 0;
+                }
+                $encuesta->update();
+                header('location:' . $referer . '?success=1');
+            } else {
+                header('location:' . $referer . '?error=2');
+            }
+        } else {
+            header('location:' . $referer . '?error=1');
+        }
     }
 
     function ver() {
@@ -74,24 +130,36 @@ class EncuestasController extends Session {
         if (Session::siExisteSesion()) {
             $this->data['idencuesta'] = intval($this->params['idencuesta']);
             $this->data['idevento'] = intval($this->params['idevento']);
-            
             Doo::loadModel('CtEncuesta');
             Doo::loadModel('CtPreguntas');
             Doo::loadModel('CtRespuesta');
             $ec = new CtEncuesta();
             $ec->id_encuesta = intval($this->params['idencuesta']);
-            $ec = $ec->getOne();//relate('CtPreguntas',array('limit'=>1));
+            $ec = $ec->getOne();
             if (!empty($ec)) {
                 $preguntas = new CtPreguntas();
                 $preguntas->id_encuesta = $ec->id_encuesta;
                 $this->data['preguntas'] = $preguntas->relate('CtRespuesta');
                 $this->data['slug'] = 'encuestas';
                 $this->renderc('admin/encuesta-editar', $this->data);
-            }else{
+            } else {
                 header('location:' . Doo::conf()->APP_URL . 'ionadmin/eventos?error=1');
             }
         } else {
             header('location:' . Doo::conf()->APP_URL . 'ionadmin/login?error=1');
+        }
+    }
+
+    function deshabilitarTodas() {
+        session_start();
+        if (Session::siExisteSesion()) {
+            $referer = (isset($_SERVER['HTTP_REFERER'])) ? $_SERVER['HTTP_REFERER'] : Doo::conf()->APP_URL . 'ionadmin/index';
+            $referer = strtok($referer, '?');
+            $query = "UPDATE ct_encuesta e SET e.activa = 0";
+            Doo::db()->query($query);
+            header('location:' . $referer . '?success=1');
+        } else {
+            header('location:' . $referer . '?error=1');
         }
     }
 
