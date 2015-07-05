@@ -23,7 +23,14 @@
                         <div class="cd-timeline-block">
                             <div class="cd-timeline-img cd-black">
                             </div> <!-- cd-timeline-img -->
-
+                            
+                            <?php 
+                            if(!empty($data['eventos'])){
+                                foreach($data['eventos'] as $e){
+                                    
+                                }
+                            }
+                            ?>
                             <div class="cd-timeline-content">
                                 <h2>Title of section 1</h2>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>

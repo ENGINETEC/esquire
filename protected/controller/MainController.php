@@ -20,6 +20,8 @@ class MainController extends DooController {
     }
     
     public function programa() {
+        Doo::loadModel('CtEventos');
+        $this->data['eventos'] = Doo::db()->find('CtEventos');
         $this->data['slug'] = 'programa';
         $this->renderc('eventos',$this->data);
     }

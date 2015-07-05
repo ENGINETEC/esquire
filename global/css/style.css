@@ -169,10 +169,29 @@ main, footer {
   display: inline-block;
   width: 70%;
   text-align: center;
-  font-family: 'Roboto',sans-serif;
+  font-family: 'Conv_Grotesque MT Std Condensed', sans-serif;
   font-size: 35px;
   padding: 10px 10px;
   margin: 30px 10px;
+}
+
+.cd-timeline-block {
+  font-family: 'Conv_Grotesque MT Std Condensed', sans-serif;
+}
+.cd-timeline-content {
+  text-transform: uppercase;
+}
+.cd-timeline-content .cd-read-more {
+  float: right;
+  padding: .8em 1em;
+  background: #000;
+  color: #FFF;
+  border: 1px solid #FFF;
+  border-radius: 0;
+}
+.no-touch .cd-timeline-content .cd-read-more:hover {
+  background-color: #FFF;
+  color: #000;
 }
 
 /* Admin ================================================================ */
