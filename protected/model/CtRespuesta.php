@@ -27,6 +27,11 @@ class CtRespuesta extends CtRespuestaBase {
             $query = 'SELECT COUNT(id_resultado_encuesta) AS valor, id_respuesta FROM ht_resultado_encuesta WHERE id_respuesta = ' . $this->id_respuesta . ' GROUP BY id_respuesta';
             $result = Doo::db()->query($query);
             $r = $result->fetch();
+            if(empty($r)){
+                $r = array();
+                $r['id_respuesta'] =  $this->id_respuesta;
+                $r['valor'] = 0;
+            }
         }
         return $r;
     }

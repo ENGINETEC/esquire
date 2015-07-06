@@ -25,7 +25,7 @@
         <!-- <li class="bold <?php if (isset($data['slug']) && $data['slug'] == 'resultados') echo 'active'; ?>"><a href="#" class="waves-effect waves-esquire">Resultados</a></li> -->
         <li class="bold <?php if (isset($data['slug']) && $data['slug'] == 'website') echo 'active'; ?>"><a href="<?php echo Doo::conf()->SUBFOLDER; ?>website" class="waves-effect waves-esquire">Minisite</a></li>
         <li class="bold <?php if (isset($data['slug']) && $data['slug'] == 'issue') echo 'active'; ?>"><a href="<?php echo Doo::conf()->SUBFOLDER; ?>issue" class="waves-effect waves-esquire">Issue</a></li>
-        <li class="bold"><a href="https://www.facebook.com/esquire_latinomaerica" target="_blank" class="waves-effect waves-esquire"><i class="fa fa-instagram"></i>Esquire_latinoamerica</a></li>
+        <li class="bold"><a href="https://instagram.com/esquire_latinoamerica/" target="_blank" class="waves-effect waves-esquire"><i class="fa fa-instagram"></i>Esquire_latinoamerica</a></li>
         <li class="bold"><a href="https://www.facebook.com/EsquireLat" target="_blank" class="waves-effect waves-esquire"><i class="fa fa-facebook"></i>EsquireLat</a></li>
         <li class="bold"><a href="https://twitter.com/esquirelat" target="_blank" class="waves-effect waves-esquire"><i class="fa fa-twitter"></i>@esquirelat</a></li>
     </ul>
