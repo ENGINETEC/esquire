@@ -43,7 +43,7 @@ class MainController extends DooController {
                     $res->insert();
                 }
             }
-            header('location:'.Doo::conf()->APP_URL.'encuesta/gracias');
+            header('location:' . Doo::conf()->APP_URL . 'encuesta/gracias');
         } else {
             Doo::loadModel('CtEncuesta');
             Doo::loadModel('CtEventos');
@@ -69,7 +69,36 @@ class MainController extends DooController {
     }
 
     public function encuestaGracias() {
-        $this->renderc('encuesta-gracias');
+        Doo::loadModel('CtEncuesta');
+        Doo::loadModel('CtPreguntas');
+        Doo::loadModel('CtRespuesta');
+        $en = new CtEncuesta();
+        $en->activa = 1;
+        $encuesta = $en->getOne();
+        $this->data['encuesta'] = $encuesta;
+        if (!empty($encuesta)) {
+            $preguntas = new CtPreguntas();
+            $preguntas->id_encuesta = $encuesta->id_encuesta;
+            $preguntas = $preguntas->relate('CtRespuesta');
+            $preguntasArray = array();
+            if (!empty($preguntas)) {
+                foreach ($preguntas as $p) {
+                    $copyp = $p;
+                    if (!empty($p->CtRespuesta)) {
+                        $ctResp = array();
+                        foreach ($p->CtRespuesta as $r) {
+                            $r->resultados = $r->getResultadosEncuestas();
+                            $ctResp[] = $r;
+                        }
+                        unset($copyp->CtRespuesta);
+                        $copyp->CtRespuesta = $ctResp;
+                    }
+                    $preguntasArray[] = $copyp;
+                }
+            }
+            $this->data['preguntas'] = $preguntasArray;
+        }
+        $this->renderc('encuesta-gracias', $this->data);
     }
 
     public function issue() {

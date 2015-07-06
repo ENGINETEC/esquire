@@ -16,7 +16,7 @@ $( window ).resize(function(){
     $('#nav-mobile').getNiceScroll().resize();
 });
 
-$('#nav-mobile a').click(function(){
+/*$('#nav-mobile a').click(function(){
     $('#preloader-container').show();
 });
 
@@ -24,8 +24,7 @@ $('button#login').click(function(){
     $('#preloader-container').show();
 });
 
-
 $("a").click(function (event) {
     event.preventDefault();
     window.location = $(this).attr("href");
-});
+});*/
