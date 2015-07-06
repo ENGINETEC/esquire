@@ -25,6 +25,9 @@ $route['*']['/ionadmin/encuestas/desactivar/todas'] = array('EncuestasController
 
 $route['*']['/ionadmin/evento/:idevento/encuestas/editar/:idencuesta'] = array('EncuestasController', 'ver');
 
+$route['*']['/ionadmin/evento/:idevento/encuestas/estadisticas/:idencuesta'] = array('EncuestasController', 'estadisticas');
+
+
 //Preguntas
 $route['*']['/ionadmin/encuesta/:idencuesta/preguntas/agregar'] = array('PyRController', 'agregarPregunta');
 $route['*']['/ionadmin/encuesta/preguntas/eliminar/:idpregunta'] = array('PyRController', 'eliminarPregunta');
@@ -37,6 +40,10 @@ $route['*']['/ionadmin/encuesta/preguntas/respuesta/eliminar/:idrespuesta'] = ar
 //Página
 $route['*']['/website'] = array('MainController', 'website');
 $route['*']['/programa'] = array('MainController', 'programa');
+$route['*']['/encuesta'] = array('MainController', 'encuesta');
+$route['*']['/encuesta/gracias'] = array('MainController', 'encuestaGracias');
 $route['*']['/issue'] = array('MainController', 'issue');
+
+$route['*']['/api/encuesta'] = array('MainController', 'encuestaActiva');
 
 ?>

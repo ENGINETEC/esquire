@@ -4,4 +4,27 @@
 <script src="<?php echo Doo::conf()->APP_URL; ?>global/js/materialize.min.js"></script>
 <script src="<?php echo Doo::conf()->APP_URL; ?>global/js/jquery.nicescroll.min.js"></script>
 <script src="<?php echo Doo::conf()->APP_URL; ?>global/js/init.js"></script>
+<script type="text/javascript">
+    var encuesta;
+$(document).ready(function(){
+    $.get("<?php echo Doo::conf()->APP_URL.'api/encuesta'; ?>", function(data){
+        obj = $.parseJSON(data);
+        encuesta = obj.encuesta;
+    });
+});
+
+function updateEncuesta(){
+    $.get("<?php echo Doo::conf()->APP_URL.'api/encuesta'; ?>", function(data){
+        obj = $.parseJSON(data);
+        if(encuesta==false && encuesta != obj.encuesta){
+            encuesta = obj.encuesta;
+            alert("Responde la nueva encuesta");
+            document.location.href = '<?php echo Doo::conf()->SUBFOLDER; ?>encuesta';
+        }else if(obj.encuesta == false){
+            encuesta = false;
+        }
+    });
+}
+setInterval("updateEncuesta()",3000);
+</script>
 <!--  /Scripts-->

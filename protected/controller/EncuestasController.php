@@ -162,6 +162,28 @@ class EncuestasController extends Session {
             header('location:' . $referer . '?error=1');
         }
     }
+    
+    function estadisticas(){
+        session_start();
+        if (Session::siExisteSesion()) {
+            $this->data['idencuesta'] = intval($this->params['idencuesta']);
+            $this->data['idevento'] = intval($this->params['idevento']);
+            Doo::loadModel('CtEncuesta');
+            Doo::loadModel('CtPreguntas');
+            Doo::loadModel('CtRespuesta');
+            $ec = new CtEncuesta();
+            $ec->id_encuesta = intval($this->params['idencuesta']);
+            $ec = $ec->getOne();
+            if (!empty($ec)) {
+                $this->data['nombre_encuesta'] = $ec->nombre;
+                $this->renderc('admin/encuesta-graficas', $this->data);
+            } else {
+                header('location:' . Doo::conf()->APP_URL . 'ionadmin/eventos?error=1');
+            }
+        } else {
+            header('location:' . Doo::conf()->APP_URL . 'ionadmin/login?error=1');
+        }
+    }
 
 }
 

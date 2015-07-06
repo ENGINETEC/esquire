@@ -105,4 +105,4 @@ $config['ERROR_404_ROUTE'] = '/error';
 //$config['pagesize'] = 10;
 
 
-$config['APP_NAME'] = '#TheManOfToday';
+$config['APP_NAME'] = '#ManOfToday';

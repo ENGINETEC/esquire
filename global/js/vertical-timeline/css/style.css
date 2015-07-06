@@ -56,7 +56,8 @@ Main components
     left: 18px;
     height: 100%;
     width: 4px;
-    background: #d7e4ed;
+    background: #FFF;
+    z-index: -1;
 }
 @media only screen and (min-width: 969px) {
     #cd-timeline {
@@ -261,6 +262,7 @@ Main components
     .cd-timeline-content p {
         font-size: 16px;
         font-size: 1rem;
+        margin: 0;
     }
     .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
         font-size: 14px;
@@ -285,10 +287,11 @@ Main components
     }
     .cd-timeline-content .cd-date {
         position: absolute;
-        width: 36%;
-        top: 10px;
-        font-size: 16px;
-        font-size: 1rem;
+        width: 100%;
+        top: 8px;
+        font-size: 17px;
+        text-align: right;
+        margin-left: -50%;
     }
     .cd-timeline-block:nth-child(even) .cd-timeline-content {
         float: right;

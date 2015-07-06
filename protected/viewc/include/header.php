@@ -15,15 +15,17 @@
     <div class="container"><a href="#" data-activates="nav-mobile" class="button-collapse top-nav waves-effect waves-light circle hide-on-large-only"><i class="mdi-navigation-menu"></i></a></div>
     <ul id="nav-mobile" class="side-nav fixed">
         <li class="logo">
-            <a id="logo-container" href="#" class="brand-logo">
+            <a id="logo-container" href="<?php echo Doo::conf()->APP_URL; ?>" class="brand-logo">
                 <img src="<?php echo Doo::conf()->APP_URL; ?>global/img/logo.png" alt="logo">
             </a>
         </li>
-        <li class="bold <?php if (isset($data['slug']) && $data['slug'] == 'programa') echo 'active'; ?>"><a href="<?php echo Doo::conf()->SUBFOLDER; ?>programa" class="waves-effect waves-esquire">Programa</a></li>
-        <li class="bold <?php if (isset($data['slug']) && $data['slug'] == 'encuestas') echo 'active'; ?>"><a href="#" class="waves-effect waves-esquire">Encuestas</a></li>
-        <li class="bold <?php if (isset($data['slug']) && $data['slug'] == 'resultados') echo 'active'; ?>"><a href="#" class="waves-effect waves-esquire">Resultados</a></li>
-        <li class="bold <?php if (isset($data['slug']) && $data['slug'] == 'website') echo 'active'; ?>"><a href="<?php echo Doo::conf()->SUBFOLDER; ?>website" class="waves-effect waves-esquire">Website</a></li>
-        <!-- <li class="bold <?php if (isset($data['slug']) && $data['slug'] == 'minisite') echo 'active'; ?>"><a href="#" class="waves-effect waves-esquire">Minisite</a></li> -->
+        <li class="bold <?php if (isset($data['slug']) && $data['slug'] == 'home') echo 'active'; ?>"><a href="<?php echo Doo::conf()->SUBFOLDER; ?>" class="waves-effect waves-esquire">Inicio</a></li>
+        <!-- <li class="bold <?php if (isset($data['slug']) && $data['slug'] == 'programa') echo 'active'; ?>"><a href="<?php echo Doo::conf()->SUBFOLDER; ?>programa" class="waves-effect waves-esquire">Programa</a></li> -->
+        <li class="bold <?php if (isset($data['slug']) && $data['slug'] == 'encuestas') echo 'active'; ?>"><a href="<?php echo Doo::conf()->SUBFOLDER; ?>encuesta" class="waves-effect waves-esquire">Encuestas</a></li>
+        <!-- <li class="bold <?php if (isset($data['slug']) && $data['slug'] == 'resultados') echo 'active'; ?>"><a href="#" class="waves-effect waves-esquire">Resultados</a></li> -->
+        <li class="bold <?php if (isset($data['slug']) && $data['slug'] == 'website') echo 'active'; ?>"><a href="<?php echo Doo::conf()->SUBFOLDER; ?>website" class="waves-effect waves-esquire">Minisite</a></li>
         <li class="bold <?php if (isset($data['slug']) && $data['slug'] == 'issue') echo 'active'; ?>"><a href="<?php echo Doo::conf()->SUBFOLDER; ?>issue" class="waves-effect waves-esquire">Issue</a></li>
+        <li class="bold"><a href="https://www.facebook.com/EsquireLat" target="_blank" class="waves-effect waves-esquire"><i class="fa fa-facebook"></i>EsquireLat</a></li>
+        <li class="bold"><a href="https://twitter.com/esquirelat" target="_blank" class="waves-effect waves-esquire"><i class="fa fa-twitter"></i>@esquirelat</a></li>
     </ul>
 </header>

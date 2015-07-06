@@ -19,8 +19,10 @@ $dbmap['CtPreguntas']['has_many']['CtRespuesta'] = array('foreign_key'=>'id_preg
 
 //CtRespuestas
 $dbmap['CtRespuesta']['belongs_to']['CtPreguntas'] = array('foreign_key'=>'id_pregunta');
+$dbmap['CtRespuesta']['has_many']['HtResultadoEncuestas'] = array('foreign_key'=>'id_respuesta');
 
-
+//HtResultadoEncuestas
+$dbmap['HtResultadoEncuestas']['belongs_to']['CtRespuesta'] = array('foreign_key'=>'id_respuesta');
 
 //$dbconfig[ Environment or connection name] = array(Host, Database, User, Password, DB Driver, Make Persistent Connection?);
 /**
@@ -30,5 +32,5 @@ $dbmap['CtRespuesta']['belongs_to']['CtPreguntas'] = array('foreign_key'=>'id_pr
  */
 
 $dbconfig['dev'] = array('localhost', 'esquire_app', 'root', 'cete8653', 'mysql', true,  'collate'=>'latin1_spanish_ci', 'charset'=>'latin1');
-$dbconfig['prod'] = array('localhost', 'esquire_app', 'root', 'cete8653', 'mysql', true, 'collate'=>'latin1_spanish_ci', 'charset'=>'latin1');
+$dbconfig['prod'] = array('localhost', 'esquire_app', 'esquire', 'crexr3crexr3', 'mysql', true, 'collate'=>'latin1_spanish_ci', 'charset'=>'latin1');
 ?>
