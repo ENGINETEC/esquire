@@ -68,8 +68,10 @@ body.admin, body.encuesta{
     background-color: #FFF;
 }
 [type="radio"]:not(:checked)+label, [type="radio"]:checked+label {
-    padding-right: 20px;
+    padding-left: 27px;
+    padding-right: 10px;
     height: auto;
+    font-size: 14px;
 }
 [type="radio"]:checked+label{
     background-color:#000;
@@ -300,6 +302,7 @@ main, footer {
 /* Encuesta ============================================================= */
 #titulo-encuesta {
     text-align: center;
+    position: relative;
 }
 #titulo-encuesta h2 {
     color: #000;
@@ -309,8 +312,8 @@ main, footer {
     text-align: center;
     font-family: 'Conv_Grotesque MT Std Condensed', sans-serif;
     font-size: 35px;
-    padding: 10px 10px;
-    margin: 30px 10px;
+    padding: 0px 10px;
+    margin: 12px 10px;
 }
 #contenido-principal h3{
     text-align: center;
@@ -318,15 +321,19 @@ main, footer {
     font-size: 30px;
 }
 .row.pregunta {
-    padding: 27px 0px;
+    padding: 7px 0px;
+}
+.row.pregunta p.pregunta {
+    margin-bottom: 0px;
+    text-align: left;
 }
 .section.encuesta-section {
-  width: 98%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: -30px;
-  border: 3px solid #000;
-  position: relative;
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    border: 3px solid #000;
+    position: relative;
 }
 .section.encuesta-section .row.row-encuesta:before {
     content: " ";
@@ -339,8 +346,21 @@ main, footer {
     border: 1px solid #000;
 }
 .section.encuesta-section .row.row-encuesta {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.encuesta .row {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+}
+/* Graficas ============================================================= */
+.pregunta{
+    padding: 10px;
+}
+.grafica {
+    padding-left: 15px;
+    padding-right: 15px;
 }
 /* Admin ================================================================ */
 .pregunta-container {
@@ -348,7 +368,7 @@ main, footer {
     text-align: left;
 }
 p.pregunta {
-    font-size: 19px;
+    font-size: 16px;
     font-weight: bold;
     font-style: italic;
 }
@@ -388,5 +408,5 @@ a.btn.red.btn-respuesta {
 }
 
 .amcharts-main-div a {
-  display: none !important;
+    display: none !important;
 }

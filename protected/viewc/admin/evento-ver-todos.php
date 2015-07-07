@@ -60,9 +60,9 @@
     <script type="text/javascript">
         <?php 
         if(isset($_GET['success']) && $_GET['success']==1 ){
-            echo 'Materialize.toast(\'Se ha registrado el evento exitosamente\', 4000)';
+            echo 'Materialize.toast(\'Se ha realizado la acción solicitada con éxito.\', 4000)';
         }else if(isset($_GET['error'])){
-            echo 'Materialize.toast(\'Ocurrio un error al registrar el evento. Intentenlo nuevamente.\', 4000)';
+            echo 'Materialize.toast(\'Ocurrio un error. Inténtenlo nuevamente.\', 4000)';
         }
         ?>
     </script>
