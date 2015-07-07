@@ -5,26 +5,28 @@ $(document).ready(function() {
         menuWidth: 300, // Default is 240
         closeOnClick: false // Closes side-nav on <a> clicks, useful for Angular/Meteor
     });
-    
+
     /* Scroll */
     $('html').niceScroll();
     $('#nav-mobile').niceScroll();
 });
 
-$( window ).resize(function(){
+$(window).resize(function() {
     $('html').getNiceScroll().resize();
     $('#nav-mobile').getNiceScroll().resize();
 });
 
-/*$('#nav-mobile a').click(function(){
+/*$('#nav-mobile a').click(function() {
     $('#preloader-container').show();
-});
-
-$('button#login').click(function(){
-    $('#preloader-container').show();
-});
-
-$("a").click(function (event) {
-    event.preventDefault();
-    window.location = $(this).attr("href");
 });*/
+
+$('button#login').click(function() {
+    $('#preloader-container').show();
+});
+
+$("a").click(function(event) {
+    if ($(this).attr("href")) {
+        event.preventDefault();
+        window.location = $(this).attr("href");
+    }
+});

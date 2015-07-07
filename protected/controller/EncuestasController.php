@@ -162,8 +162,8 @@ class EncuestasController extends Session {
             header('location:' . $referer . '?error=1');
         }
     }
-    
-    function estadisticas(){
+
+    function estadisticas() {
         session_start();
         if (Session::siExisteSesion()) {
             $this->data['idencuesta'] = intval($this->params['idencuesta']);
@@ -173,8 +173,29 @@ class EncuestasController extends Session {
             Doo::loadModel('CtRespuesta');
             $ec = new CtEncuesta();
             $ec->id_encuesta = intval($this->params['idencuesta']);
-            $ec = $ec->getOne();
-            if (!empty($ec)) {
+            $encuesta = $ec->getOne();
+            $this->data['encuesta'] = $encuesta;
+            if (!empty($encuesta)) {
+                $preguntas = new CtPreguntas();
+                $preguntas->id_encuesta = $encuesta->id_encuesta;
+                $preguntas = $preguntas->relate('CtRespuesta');
+                $preguntasArray = array();
+                if (!empty($preguntas)) {
+                    foreach ($preguntas as $p) {
+                        $copyp = $p;
+                        if (!empty($p->CtRespuesta)) {
+                            $ctResp = array();
+                            foreach ($p->CtRespuesta as $r) {
+                                $r->resultados = $r->getResultadosEncuestas();
+                                $ctResp[] = $r;
+                            }
+                            unset($copyp->CtRespuesta);
+                            $copyp->CtRespuesta = $ctResp;
+                        }
+                        $preguntasArray[] = $copyp;
+                    }
+                }
+                $this->data['preguntas'] = $preguntasArray;
                 $this->data['nombre_encuesta'] = $ec->nombre;
                 $this->renderc('admin/encuesta-graficas', $this->data);
             } else {

@@ -21,12 +21,12 @@
         </li>
         <li class="bold <?php if (isset($data['slug']) && $data['slug'] == 'home') echo 'active'; ?>"><a href="<?php echo Doo::conf()->SUBFOLDER; ?>" class="waves-effect waves-esquire">Inicio</a></li>
         <!-- <li class="bold <?php if (isset($data['slug']) && $data['slug'] == 'programa') echo 'active'; ?>"><a href="<?php echo Doo::conf()->SUBFOLDER; ?>programa" class="waves-effect waves-esquire">Programa</a></li> -->
-        <li class="bold <?php if (isset($data['slug']) && $data['slug'] == 'encuestas') echo 'active'; ?>"><a href="<?php echo Doo::conf()->SUBFOLDER; ?>encuesta" class="waves-effect waves-esquire">Encuestas</a></li>
+        <li class="bold <?php if (isset($data['slug']) && $data['slug'] == 'encuesta') echo 'active'; ?>"><a href="<?php echo Doo::conf()->SUBFOLDER; ?>encuesta" class="waves-effect waves-esquire">Encuesta</a></li>
         <!-- <li class="bold <?php if (isset($data['slug']) && $data['slug'] == 'resultados') echo 'active'; ?>"><a href="#" class="waves-effect waves-esquire">Resultados</a></li> -->
         <li class="bold <?php if (isset($data['slug']) && $data['slug'] == 'website') echo 'active'; ?>"><a href="<?php echo Doo::conf()->SUBFOLDER; ?>website" class="waves-effect waves-esquire">Minisite</a></li>
         <li class="bold <?php if (isset($data['slug']) && $data['slug'] == 'issue') echo 'active'; ?>"><a href="<?php echo Doo::conf()->SUBFOLDER; ?>issue" class="waves-effect waves-esquire">Issue</a></li>
-        <li class="bold"><a href="#" class="waves-effect waves-esquire"><i class="fa fa-instagram"></i>Esquire_latinoamerica</a></li>
-        <li class="bold"><a href="#" class="waves-effect waves-esquire"><i class="fa fa-facebook"></i>EsquireLat</a></li>
-        <li class="bold"><a href="#" class="waves-effect waves-esquire"><i class="fa fa-twitter"></i>@esquirelat</a></li>
+        <li class="bold"><a class="waves-effect waves-esquire"><i class="fa fa-instagram"></i>Esquire_latinoamerica</a></li>
+        <li class="bold"><a class="waves-effect waves-esquire"><i class="fa fa-facebook"></i>EsquireLat</a></li>
+        <li class="bold"><a class="waves-effect waves-esquire"><i class="fa fa-twitter"></i>@esquirelat</a></li>
     </ul>
 </header>

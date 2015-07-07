@@ -9,12 +9,12 @@
         <script src="<?php echo Doo::conf()->APP_URL; ?>global/js/amcharts/responsive.js"></script>
         <title>Encuesta - <?php echo Doo::conf()->APP_NAME; ?></title>
     </head>
-    <body class="encuesta">
+    <body class="encuesta-graficas">
         <?php include 'include/header.php'; ?>
     <main>
         <div class="row">
             <div id="titulo-encuesta">
-                <h2>Resultados de la encuesta</h2>
+                <h2>RESULTADOS</h2>
             </div>
         </div>
         <div class="section" id="contenido-principal">
@@ -55,7 +55,7 @@
                                             chart.depth3D = 3;
                                             chart.angle = 10;
                                             chart.responsive = { "enabled": true };
-                                            chart.colors = ["#000000", "#222222", "#444444", "#666666", "#888888", "#AAAAAA", "#DDDDDD", "#FFFFFF"];
+                                            chart.colors = ["#444444", "#AAAAAA", "#DDDDDD", "#FFFFFF","#000000", "#888888", "#666666", "#222222"];
                                             
                                             // WRITE
                                             chart.write("grafica-p<?php echo $p->id_pregunta; ?>");
@@ -68,8 +68,9 @@
                     endif;
                     ?>
                     </div><!-- /row -->
+                    <br/><br/><br/>
                     <div class="row center">
-                        <a href="<?php echo Doo::conf()->SUBFOLDER . 'encuesta'; ?>" class="btn black waves-effect waves-esquire">Volver a la encuesta</a>
+                        <a href="<?php echo Doo::conf()->SUBFOLDER . 'encuesta'; ?>" class="btn white waves-effect waves-esquire-white">Volver a la encuesta</a>
                     </div>
                 </div>
                 <div class="col s2 m2 l2|">&nbsp;</div>
