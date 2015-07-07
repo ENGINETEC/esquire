@@ -156,9 +156,17 @@ ul.side-nav li a.waves-effect {
 i.fa {
     width: 30px;
 }
+li.bold.no-effect:hover {
+  background-color: #202020;
+  cursor: default;
+}
+li.bold.no-effect:hover a {
+  color: #adadad;
+  cursor: default;
+}
 /* Waves ============================================================== */
 .waves-effect.waves-esquire .waves-ripple{
-    background-color: rgba(0, 164, 219, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 /* Content ============================================================== */
