@@ -36,15 +36,18 @@
                                         <p><?php echo $e->presentador; ?></p>
                                         <p><?php echo $e->detalles; ?></p>
                                         <!-- <a href="#0" class="cd-read-more">Read more</a> -->
-                                        <span class="cd-date"><?php echo substr($e->hora,0,-3).' hrs.'; ?></span>
+                                        <span class="cd-date"><?php echo substr($e->hora, 0, -3) . ' hrs.'; ?></span>
                                     </div> <!-- cd-timeline-content -->
                                 </div> <!-- cd-timeline-block -->
                                 <?php
                             endforeach;
                         endif;
                         ?>
-                        
+
                     </section> <!-- cd-timeline -->
+                    <div class="row center">
+                        <a href="<?php echo Doo::conf()->SUBFOLDER; ?>" class="btn white waves-effect waves-esquire-white">Inicio</a>
+                    </div>
                 </div>
             </div>
         </div>

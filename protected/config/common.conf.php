@@ -1,5 +1,6 @@
 <?php
-/* 
+
+/*
  * Common configuration that can be used throughout the application
  * Please refer to DooConfig class in the API doc for a complete list of configurations
  * Access via Singleton, eg. Doo::conf()->BASE_PATH;
@@ -11,29 +12,35 @@ date_default_timezone_set('America/Mexico_City');
  * for benchmark purpose, call Doo::benchmark() for time used.
  */
 //$config['START_TIME'] = microtime(true);
-
-
-//For framework use. Must be defined. Use full absolute paths and end them with '/'      eg. /var/www/project/
-$config['SITE_PATH'] = realpath('..').'/manoftoday/';
-//$config['PROTECTED_FOLDER'] = 'protected/';
-$config['BASE_PATH'] = realpath('..').'/manoftoday/dooframework/';
-
 //for production mode use 'prod'
 $config['APP_MODE'] = 'prod';
+
+
+if ($config['APP_MODE'] == 'prod') {
+    //For framework use. Must be defined. Use full absolute paths and end them with '/'      eg. /var/www/project/
+    $config['SITE_PATH'] = realpath('..') . '/manoftoday/';
+//$config['PROTECTED_FOLDER'] = 'protected/';
+    $config['BASE_PATH'] = realpath('..') . '/manoftoday/dooframework/';
+} else {
+    $config['SITE_PATH'] = realpath('..') . '/esquire/';
+//$config['PROTECTED_FOLDER'] = 'protected/';
+    $config['BASE_PATH'] = realpath('..') . '/esquire/dooframework/';
+}
+
+
 
 //----------------- optional, if not defined, default settings are optimized for production mode ----------------
 //if your root directory is /var/www/ and you place this in a subfolder eg. 'app', define SUBFOLDER = '/app/'
 
-$config['SUBFOLDER'] = str_replace($_SERVER['DOCUMENT_ROOT'], '', str_replace('\\','/',$config['SITE_PATH']));
-if(strpos($config['SUBFOLDER'], '/')!==0){
-	$config['SUBFOLDER'] = '/'.$config['SUBFOLDER'];
+$config['SUBFOLDER'] = str_replace($_SERVER['DOCUMENT_ROOT'], '', str_replace('\\', '/', $config['SITE_PATH']));
+if (strpos($config['SUBFOLDER'], '/') !== 0) {
+    $config['SUBFOLDER'] = '/' . $config['SUBFOLDER'];
 }
-$config['APP_URL'] = 'http://'.$_SERVER['HTTP_HOST'].$config['SUBFOLDER'];
+$config['APP_URL'] = 'http://' . $_SERVER['HTTP_HOST'] . $config['SUBFOLDER'];
 $config['AUTOROUTE'] = TRUE;
 $config['DEBUG_ENABLED'] = TRUE;
 
 //$config['TEMPLATE_COMPILE_ALWAYS'] = TRUE;
-
 //register functions to be used with your template files
 //$config['TEMPLATE_GLOBAL_TAGS'] = array('url', 'url2', 'time', 'isset', 'empty');
 
@@ -60,7 +67,6 @@ $config['ERROR_404_ROUTE'] = '/error';
  *                       array('192.168.1.23', '11211', true, 80)
  *                     );
  */
- 
 /**
  * Defines modules that are allowed to be accessed from an auto route URI.
  * Example, we have a module in SITE_PATH/PROTECTED_FOLDER/module/example
@@ -69,7 +75,6 @@ $config['ERROR_404_ROUTE'] = '/error';
  * $config['MODULES'] = array('example');
  * 
  */
-
 /**
  * Unique string ID of the application to be used with PHP 5.3 namespace and auto loading of namespaced classes
  * If you wish to use namespace with the framework, your classes must have a namespace starting with this ID.
@@ -86,18 +91,16 @@ $config['ERROR_404_ROUTE'] = '/error';
  * $config['APP_NAMESPACE_ID'] = 'myapp';
  *
  */
- 
 /**
  * To enable autoloading, add directories which consist of the classes needed in your application. 
  *
  * $config['AUTOLOAD'] = array(
-                            //internal directories, live in the app
-                            'class', 'model', 'module/example/controller', 
-                            //external directories, live outside the app
-                            '/var/php/library/classes'
-                        );
-*/
-
+  //internal directories, live in the app
+  'class', 'model', 'module/example/controller',
+  //external directories, live outside the app
+  '/var/php/library/classes'
+  );
+ */
 /**
  * you can include self defined config, retrieved via Doo::conf()->variable
  * Use lower case for you own settings for future Compability with DooPHP

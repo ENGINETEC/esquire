@@ -23,7 +23,10 @@
     <body>
         <?php include 'include/header.php'; ?>
     <main>
-        <div class="section" id="contenido-principal">
+        <div class="section iframe" id="contenido-principal">
+            <div class="row">
+                <a href="<?php echo Doo::conf()->SUBFOLDER; ?>" class="btn black waves-effect waves-esquire">Inicio</a>
+            </div>
             <div class="row">
                 <div class="col s12 m12 l12">
                     <iframe src="http://www.esquirelat.com/" class="full-iframe"></iframe>
