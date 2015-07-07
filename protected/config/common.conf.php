@@ -14,12 +14,12 @@ date_default_timezone_set('America/Mexico_City');
 
 
 //For framework use. Must be defined. Use full absolute paths and end them with '/'      eg. /var/www/project/
-$config['SITE_PATH'] = realpath('..').'/esquire/';
+$config['SITE_PATH'] = realpath('..').'/manoftoday/';
 //$config['PROTECTED_FOLDER'] = 'protected/';
-$config['BASE_PATH'] = realpath('..').'/esquire/dooframework/';
+$config['BASE_PATH'] = realpath('..').'/manoftoday/dooframework/';
 
 //for production mode use 'prod'
-$config['APP_MODE'] = 'dev';
+$config['APP_MODE'] = 'prod';
 
 //----------------- optional, if not defined, default settings are optimized for production mode ----------------
 //if your root directory is /var/www/ and you place this in a subfolder eg. 'app', define SUBFOLDER = '/app/'
