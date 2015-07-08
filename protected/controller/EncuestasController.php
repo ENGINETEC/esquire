@@ -185,12 +185,15 @@ class EncuestasController extends Session {
                         $copyp = $p;
                         if (!empty($p->CtRespuesta)) {
                             $ctResp = array();
+                            $totalRespondieron = 0;
                             foreach ($p->CtRespuesta as $r) {
                                 $r->resultados = $r->getResultadosEncuestas();
                                 $ctResp[] = $r;
+                                $totalRespondieron += $r->resultados['valor'];
                             }
                             unset($copyp->CtRespuesta);
                             $copyp->CtRespuesta = $ctResp;
+                            $copyp->totalRespondieron = $totalRespondieron;
                         }
                         $preguntasArray[] = $copyp;
                     }

@@ -5,10 +5,11 @@
         <script src="<?php echo Doo::conf()->APP_URL; ?>global/js/amcharts/amcharts.js"></script>
         <script src="<?php echo Doo::conf()->APP_URL; ?>global/js/amcharts/pie.js"></script>
         <script src="<?php echo Doo::conf()->APP_URL; ?>global/js/amcharts/responsive.js"></script>
+        <link rel="stylesheet" href="<?php echo Doo::conf()->APP_URL; ?>global/css/animate.css" type="text/css">
         <title>Estad&iacute;sticas - <?php echo Doo::conf()->APP_NAME; ?></title>
     </head>
     <body class="admin">
-       <!-- <?php include 'include/header.php'; ?> -->
+        <!-- <?php include 'include/header.php'; ?> -->
     <main class="admin-graficas">
         <div class="section" id="contenido-principal">
             <div class="row">
@@ -21,52 +22,37 @@
                             <?php
                             if (isset($data['preguntas']) && !empty($data['preguntas'])):
                                 $contador = 1;
-                            ?>
-                                 <ul class="tabs">
-                                        <?php 
-                                        $size = sizeof($data['preguntas']);
-                                        for($i=1;$i<=$size;$i++){
-                                            echo '<li class="tab col s3"><a href="#pregunta'.$i.'">'.$i.'</a></li>';
-                                        }
-                                        ?>
-                                    </ul><?php
+                                ?>
+                                <ul class="tabs">
+                                    <?php
+                                    $size = sizeof($data['preguntas']);
+                                    for ($i = 1; $i <= $size; $i++) {
+                                        echo '<li class="tab col s3"><a href="#pregunta' . $i . '">Pregunta ' . $i . '</a></li>';
+                                    }
+                                    ?>
+                                </ul><?php
                                 foreach ($data['preguntas'] as $p):
                                     ?>
                                     <div class="pregunta  col s12 m12 l12" id="pregunta<?php echo $contador; ?>">
                                         <div class="input-field">
                                             <p class="pregunta"><?php echo $p->pregunta; ?></p>
-                                            <script>
-                                                var chartp<?php echo $p->id_pregunta; ?>;
-                                                var legendp<?php echo $p->id_pregunta; ?>;
-                                                var chartDatap<?php echo $p->id_pregunta; ?> = [
-        <?php
-        if (!empty($p->CtRespuesta)) {
-            foreach ($p->CtRespuesta as $r) {
-                echo '{"respuesta": "' . $r->respuesta . '","value": ' . $r->resultados['valor'] . '},';
-            }
-        }
-        ?>
-                                                ];
-                                                AmCharts.ready(function() {
-                                                    // PIE CHART
-                                                    chartp<?php echo $p->id_pregunta; ?> = new AmCharts.AmPieChart();
-                                                    chartp<?php echo $p->id_pregunta; ?>.dataProvider = chartDatap<?php echo $p->id_pregunta; ?>;
-                                                    chartp<?php echo $p->id_pregunta; ?>.titleField = "respuesta";
-                                                    chartp<?php echo $p->id_pregunta; ?>.valueField = "value";
-                                                    chartp<?php echo $p->id_pregunta; ?>.outlineColor = "#FFFFFF";
-                                                    chartp<?php echo $p->id_pregunta; ?>.outlineAlpha = 0.8;
-                                                    chartp<?php echo $p->id_pregunta; ?>.outlineThickness = 2;
-                                                    chartp<?php echo $p->id_pregunta; ?>.balloonText = "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>";
-                                                    // this makes the chart 3D
-                                                    chartp<?php echo $p->id_pregunta; ?>.depth3D = 3;
-                                                    chartp<?php echo $p->id_pregunta; ?>.angle = 10;
-                                                    chartp<?php echo $p->id_pregunta; ?>.responsive = {"enabled": true};
-                                                    chartp<?php echo $p->id_pregunta; ?>.colors = ["#505050", "#DDDDDD", "#FFFFFF", "#000000", "#888888", "#707070"];
-                                                    chartp<?php echo $p->id_pregunta; ?>.fontSize = 20;
-                                                    // WRITE
-                                                    chartp<?php echo $p->id_pregunta; ?>.write("grafica-p<?php echo $p->id_pregunta; ?>");
-                                                });</script>
-                                            <div class="grafica" id="grafica-p<?php echo $p->id_pregunta; ?>" style="width: 100%; height: 450px;"></div>
+                                            <table>
+                                            <?php
+                                            if (!empty($p->CtRespuesta)) {
+                                                $c2 = 1;
+                                                foreach ($p->CtRespuesta as $r) {
+                                                    $porcentaje = ($p->totalRespondieron>0) ? round(($r->resultados['valor']/$p->totalRespondieron)*100,2)  : 0 ;
+                                                    $fontSize = intval($porcentaje/3) + 20;
+                                                    if(($c2%2)!=0){
+                                                        echo '<tr><td style="text-align:right; width:50%; font-weight:bold; font-style:italic; font-size:'.$fontSize.'px" class="animated zoomInLeft">' . $r->respuesta . '<br/>' . $porcentaje. '%</td><td></td></tr>';
+                                                    }else{
+                                                        echo '<tr><td></td><td style="text-align:left;width:50%; font-weight:bold; font-style:italic; font-size:'.$fontSize.'px" class="animated zoomInRight">' . $r->respuesta . '<br/>' . $porcentaje . '%</td></tr>';
+                                                    }
+                                                    $c2++;
+                                                }
+                                            }
+                                            ?>
+                                            </table>
                                         </div>
                                     </div>
                                     <?php
