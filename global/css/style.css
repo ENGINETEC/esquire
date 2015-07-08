@@ -157,12 +157,12 @@ i.fa {
     width: 30px;
 }
 li.bold.no-effect:hover {
-  background-color: #202020;
-  cursor: default;
+    background-color: #202020;
+    cursor: default;
 }
 li.bold.no-effect:hover a {
-  color: #adadad;
-  cursor: default;
+    color: #adadad;
+    cursor: default;
 }
 /* Waves ============================================================== */
 .waves-effect.waves-esquire .waves-ripple{
@@ -371,21 +371,51 @@ main, footer {
     padding-right: 15px;
 }
 .encuesta-graficas p.pregunta {
-  font-size: 16px;
-  font-weight: bold;
-  font-style: italic;
-  color: #FFF;
-  text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: italic;
+    color: #FFF;
+    text-align: center;
 }
 
 .white{
     color: #000 !important;
+}
+.tabs .tab a{
+    color: #222;
+}
+.tabs .tab a:hover{
+    color: #000;
+}
+.tabs .indicator{
+    background-color: #000;
 }
 /* Website & issue ====================================================== */ 
 .section.iframe{
     padding-bottom: 0px;
 }
 
+/* Modal ================================================================ */
+.modal{
+    width: 35%;
+    border-radius: 9px;
+    font-family: 'Conv_Grotesque MT Std Condensed', sans-serif;
+}
+.modal-content {
+    text-align: center;
+}
+.modal p {
+    font-size: 22px;
+}
+.modal-footer .btn-flat {
+    margin: 6px 0;
+    float: none !important;
+}
+.modal-footer {
+    text-align: center;
+    border-top: 1px solid #ddd;
+    font-size: 21px;
+}
 /* Admin ================================================================ */
 .pregunta-container {
     padding: 15px 0;

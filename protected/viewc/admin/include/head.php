@@ -15,6 +15,7 @@
 <!-- CSS-->
 <link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <link type="text/css" rel="stylesheet" href="<?php echo Doo::conf()->APP_URL; ?>global/css/materialize.min.css"  media="screen,projection"/>
 <link type="text/css" rel="stylesheet" href="<?php echo Doo::conf()->APP_URL; ?>global/css/style.css"  media="screen,projection"/>
 

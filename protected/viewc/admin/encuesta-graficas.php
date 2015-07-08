@@ -15,27 +15,37 @@
                 <div class="col s12 m12 l12 center">
                     <div class="container center">
                         <br/><br/>
-                        <h3>Estad&iacute;sticas de la encuesta &quot;<?php echo $data['nombre_encuesta']; ?>&quot;</h3>
+                        <h3><?php echo $data['nombre_encuesta']; ?></h3>
                         <br/><br/>
                         <div class="row">
                             <?php
                             if (isset($data['preguntas']) && !empty($data['preguntas'])):
+                                $contador = 1;
+                            ?>
+                                 <ul class="tabs">
+                                        <?php 
+                                        $size = sizeof($data['preguntas']);
+                                        for($i=1;$i<=$size;$i++){
+                                            echo '<li class="tab col s3"><a href="#pregunta'.$i.'">'.$i.'</a></li>';
+                                        }
+                                        ?>
+                                    </ul><?php
                                 foreach ($data['preguntas'] as $p):
                                     ?>
-                                    <div class="pregunta  col s6 m4 l4">
+                                    <div class="pregunta  col s12 m12 l12" id="pregunta<?php echo $contador; ?>">
                                         <div class="input-field">
                                             <p class="pregunta"><?php echo $p->pregunta; ?></p>
                                             <script>
                                                 var chartp<?php echo $p->id_pregunta; ?>;
                                                 var legendp<?php echo $p->id_pregunta; ?>;
                                                 var chartDatap<?php echo $p->id_pregunta; ?> = [
-                                                    <?php
-                                                    if (!empty($p->CtRespuesta)) {
-                                                        foreach ($p->CtRespuesta as $r) {
-                                                            echo '{"respuesta": "' . $r->respuesta . '","value": ' . $r->resultados['valor'] . '},';
-                                                        }
-                                                    }
-                                                    ?>
+        <?php
+        if (!empty($p->CtRespuesta)) {
+            foreach ($p->CtRespuesta as $r) {
+                echo '{"respuesta": "' . $r->respuesta . '","value": ' . $r->resultados['valor'] . '},';
+            }
+        }
+        ?>
                                                 ];
                                                 AmCharts.ready(function() {
                                                     // PIE CHART
@@ -51,15 +61,16 @@
                                                     chart.depth3D = 3;
                                                     chart.angle = 10;
                                                     chart.responsive = {"enabled": true};
-                                                    chart.colors = ["#444444", "#AAAAAA", "#DDDDDD", "#FFFFFF","#000000", "#888888", "#666666", "#222222"];
+                                                    chart.colors = ["#505050", "#DDDDDD", "#FFFFFF", "#000000", "#888888", "#707070"];
 
                                                     // WRITE
                                                     chart.write("grafica-p<?php echo $p->id_pregunta; ?>");
                                                 });</script>
-                                            <div class="grafica" id="grafica-p<?php echo $p->id_pregunta; ?>" style="width: 100%; height: 240px;"></div>
+                                            <div class="grafica" id="grafica-p<?php echo $p->id_pregunta; ?>" style="width: 100%; height: 270px;"></div>
                                         </div>
                                     </div>
                                     <?php
+                                    $contador++;
                                 endforeach;
                             endif;
                             ?>

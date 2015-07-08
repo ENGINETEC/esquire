@@ -196,7 +196,7 @@ class EncuestasController extends Session {
                     }
                 }
                 $this->data['preguntas'] = $preguntasArray;
-                $this->data['nombre_encuesta'] = $ec->nombre;
+                $this->data['nombre_encuesta'] = $encuesta->nombre;
                 $this->renderc('admin/encuesta-graficas', $this->data);
             } else {
                 header('location:' . Doo::conf()->APP_URL . 'ionadmin/eventos?error=1');

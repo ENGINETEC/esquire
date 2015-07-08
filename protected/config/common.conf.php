@@ -13,7 +13,7 @@ date_default_timezone_set('America/Mexico_City');
  */
 //$config['START_TIME'] = microtime(true);
 //for production mode use 'prod'
-$config['APP_MODE'] = 'dev';
+$config['APP_MODE'] = 'prod';
 
 
 if ($config['APP_MODE'] == 'prod') {
