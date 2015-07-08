@@ -426,11 +426,29 @@ p.pregunta {
     font-weight: bold;
     font-style: italic;
 }
-
-.admin #contenido-principal ul li {
+main.admin-graficas{
+    padding: 0px;
+}
+.admin-graficas .section {
+  margin: 0px;
+}
+.admin-graficas #contenido-principal h3 {
+  text-align: center;
+  font-family: 'Conv_Grotesque MT Std Condensed', sans-serif;
+  font-size: 50px;
+  margin: 0 auto;
+  max-width: 65%;
+}
+.admin-graficas #contenido-principal ul li {
     list-style-type: lower-latin;
     margin-left: 20px;
 }
+.admin-graficas p.pregunta {
+  font-size: 32px;
+  font-weight: bold;
+  font-style: italic;
+}
+
 a.btn.red.btn-respuesta {
     line-height: 22px;
     padding: 0px 5px;

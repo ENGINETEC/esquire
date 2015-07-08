@@ -5,7 +5,7 @@
       <p>Se ha habilitado una nueva encuesta</p>
     </div>
     <div class="modal-footer">
-      <a href="<?php echo Doo::conf()->SUBFOLDER.'encuesta'; ?>" class=" modal-action modal-close black waves-effect waves-esquire-white btn-flat">Contestar ahora</a>
+      <a href="<?php echo Doo::conf()->SUBFOLDER.'encuesta'; ?>" class=" modal-action modal-close waves-effect waves-esquire btn-flat">Contestar ahora</a>
     </div>
   </div>
 
