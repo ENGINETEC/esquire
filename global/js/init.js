@@ -9,6 +9,7 @@ $(document).ready(function() {
     /* Scroll */
     $('html').niceScroll();
     $('#nav-mobile').niceScroll();
+    
 });
 
 $(window).resize(function() {
@@ -30,3 +31,5 @@ $("a").click(function(event) {
         window.location = $(this).attr("href");
     }
 });
+
+/*document.body.addEventListener('touchmove', function(e){ e.preventDefault(); });*/

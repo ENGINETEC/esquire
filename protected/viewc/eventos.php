@@ -34,7 +34,7 @@
                                     <div class="cd-timeline-content">
                                         <h2><?php echo $e->nombre; ?></h2>
                                         <p><?php echo $e->presentador; ?></p>
-                                        <p><?php echo $e->detalles; ?></p>
+                                        <p><?php echo nl2br($e->detalles); ?></p>
                                         <!-- <a href="#0" class="cd-read-more">Read more</a> -->
                                         <span class="cd-date"><?php echo substr($e->hora, 0, -3) . ' hrs.'; ?></span>
                                     </div> <!-- cd-timeline-content -->

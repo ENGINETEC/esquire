@@ -73,9 +73,9 @@
                             endif;
                         }
                         ?>
-                        <div class="row center">
+                        <!-- <div class="row center">
                             <a href="<?php echo Doo::conf()->SUBFOLDER; ?>" class="btn black waves-effect waves-esquire">Inicio</a>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="col s12 m2 l2">&nbsp;</div>
                 </div>

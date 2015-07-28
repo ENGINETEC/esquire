@@ -42,7 +42,7 @@
                                                 $c2 = 1;
                                                 foreach ($p->CtRespuesta as $r) {
                                                     $porcentaje = ($p->totalRespondieron>0) ? round(($r->resultados['valor']/$p->totalRespondieron)*100,2)  : 0 ;
-                                                    $fontSize = intval($porcentaje/3) + 20;
+                                                    $fontSize = intval($porcentaje/3) + 30;
                                                     if(($c2%2)!=0){
                                                         echo '<tr><td style="text-align:right; width:50%; font-weight:bold; font-style:italic; font-size:'.$fontSize.'px" class="animated zoomInLeft">' . $r->respuesta . '<br/>' . $porcentaje. '%</td><td></td></tr>';
                                                     }else{
@@ -57,6 +57,7 @@
                                     </div>
                                     <?php
                                     $contador++;
+                                    echo '<!-- respondieron la encuesta '.$p->totalRespondieron.' personas. -->';
                                 endforeach;
                             endif;
                             ?>
